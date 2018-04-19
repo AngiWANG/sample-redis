@@ -8,6 +8,7 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
@@ -25,36 +26,36 @@ public class SampleRedisApplication {
      *
      * @return
      */
-    @Bean
-    public RedisConnectionFactory jedisConnectionFactory() {
-        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
-        redisStandaloneConfiguration.setHostName("localhost");
-        redisStandaloneConfiguration.setPort(6379);
-        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(redisStandaloneConfiguration);
-        return jedisConnectionFactory;
-    }
+//    @Bean
+//    public RedisConnectionFactory jedisConnectionFactory() {
+//        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
+//        redisStandaloneConfiguration.setHostName("localhost");
+//        redisStandaloneConfiguration.setPort(6379);
+//        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(redisStandaloneConfiguration);
+//        return jedisConnectionFactory;
+//    }
 
     /**
      * RedisTemplate
      *
      * @return
      */
-    @Bean
-    RedisTemplate<String, String> redisTemplate() {
-        RedisTemplate redisTemplate = new RedisTemplate();
-        redisTemplate.setConnectionFactory(jedisConnectionFactory());
-        return redisTemplate;
-    }
+//    @Bean
+//    RedisTemplate<String, String> redisTemplate() {
+//        RedisTemplate redisTemplate = new RedisTemplate();
+//        redisTemplate.setConnectionFactory(jedisConnectionFactory());
+//        return redisTemplate;
+//    }
 
     /**
      * StringRedisTemplate
      *
      * @return
      */
-    @Bean
-    StringRedisTemplate stringRedisTemplate() {
-        StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
-        stringRedisTemplate.setConnectionFactory(jedisConnectionFactory());
-        return stringRedisTemplate;
-    }
+//    @Bean
+//    StringRedisTemplate stringRedisTemplate() {
+//        StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
+//        stringRedisTemplate.setConnectionFactory(jedisConnectionFactory());
+//        return stringRedisTemplate;
+//    }
 }

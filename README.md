@@ -1,1 +1,1 @@
-## sample spring boot and spring data redis
+## sample spring data redis project based on spring boot.
